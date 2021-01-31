@@ -2,19 +2,19 @@
   "name": "verk1",
   "version": "1.0.0",
   "description": "[Kynning í fyrirlestri](https://youtu.be/pCEHnurbuCU).",
-  "main": ".eslintrc.js",
+  "main": "app.js",
   "scripts": {
-    "browser-sync": "browser-sync start --server --files index.html styles.css",
-    "start": "browser-sync start --serveStatic 'src' --serveStatic 'node_modules' --files 'src'",
+    "browser-sync": "browser-sync start --server --files index.html '../verkefni1' 'styles'",
     "eslint": "eslint ./src/**/*.mjs",
     "stylelint": "stylelint ./src/styles/**/*.scss --syntax scss",
-    "sass": "node-sass --source-map-embed ./styles/styles.scss ./styles/styles.css",
-    "sass-watch": "node-sass --source-map-embed --watch --recursive ./styles/styles.scss ./styles/styles.css",
+    "sass-watch": "node-sass --source-map-embed --watch --recursive styles/styles.scss styles/styles.css",
     "test": "npm-run-all eslint stylelint",
-    "dev": "npm-run-all --parallel sass sass-watch browser-sync rollup-watch",
-    "babel": "babel src --out-dir dist",
-    "babel-watch": "babel src --out-dir dist --watch",
-    "rollup-watch": "rollup -c -w"
+    "sass": "node-sass --watch ./styles/styles.scss ./styles/styles.css",
+    "start": "node index",
+    "dev": "concurrently npm:nodemon -w src/app.js app.js npm:sass:*",
+    "sass:build": "node-sass --source-map-embed ./styles/styles.scss ./public/styles.css",
+    "sass:watch": "node-sass --source-map-embed --watch ./styles/styles.scss ./public/styles.css",
+    "nodemon": "nodemon ./src/app.js"
   },
   "repository": {
     "type": "git",
@@ -27,27 +27,24 @@
   },
   "homepage": "https://github.com/vefforritun/vef2-2021-v1#readme",
   "dependencies": {
-    "browser-sync": "^2.26.13",
-    "eslint": "^7.18.0",
+    "ejs": "^3.1.5",
     "express": "^4.17.1",
-    "sass": "^1.32.4",
-    "stylelint": "^13.8.0"
+    "express-ejs-layouts": "^2.5.0",
+    "node-sass": "^5.0.0",
+    "sass": "^1.32.5"
   },
   "devDependencies": {
-    "@babel/cli": "^7.7.4",
-    "@babel/core": "^7.7.4",
-    "@babel/preset-env": "^7.7.4",
-    "browser-sync": "^2.26.7",
-    "eslint": "^6.7.1",
+    "browser-sync": "^2.26.14",
+    "eslint": "^7.19.0",
     "eslint-config-airbnb-base": "^14.0.0",
     "eslint-plugin-import": "^2.18.2",
-    "node-sass": "^4.13.0",
+    "nodemon": "^2.0.7",
     "npm-run-all": "^4.1.5",
-    "rollup": "^1.27.5",
-    "rollup-plugin-babel": "^4.3.3",
     "sass-watch": "^0.1.0",
-    "stylelint": "^9.10.1",
-    "stylelint-config-primer": "^2.2.11"
+    "stylelint": "^13.9.0",
+    "stylelint-config-primer": "^9.3.3",
+    "stylelint-config-sass-guidelines": "^7.1.0",
+    "stylelint-config-standard": "^20.0.0"
   },
   "keywords": []
 }

@@ -1,3 +1,134 @@
-header {
-    background: rgb(255, 63, 63);
+@import "config.scss";
+@import "video__styles.scss";
+$page: 1200px;
+$index-font: 'Franklin Gothic Medium',
+'Arial Narrow',
+Arial,
+sans-serif;
+$gutter: 20px;
+
+* {
+  padding: 0;
+  margin: 0;
+  transition: 0.2s ease-in-out;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+.grid {
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  /* stylelint-disable-line */
+  box-sizing: border-box;
+  overflow-x: hidden;
+  overflow-y: scroll; // alltaf hafa y skrollbar
+
+  font-family: $index-font;
+  font-size: 16px;
+}
+
+.header {
+  padding: 1rem;
+  margin: 2rem 0 2rem 0;
+}
+
+
+.header__h1 {
+  text-align: center;
+}
+
+.videos__title {
+  font-size: 2rem;
+  margin: 1rem 0 1rem 0;
+
+}
+
+
+.page__layout {
+  margin: 0 auto;
+  width: $page;
+  max-width: 90vw;
+  margin-bottom: 2rem;
+}
+
+.videos__row {
+  display: flex;
+  flex-wrap: wrap;
+  //flex-direction: column;
+  //  align-items: left;
+  justify-content: space-between;
+}
+
+.videos__col {
+  width: 100%;
+  margin: 2rem 0 2rem 0;
+}
+
+.video__card {
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.video__image {
+  width: 100%;
+}
+
+.video__img {
+  width: 100%;
+}
+
+@media screen and (min-width: 801px) {
+  .videos__col {
+    width: 48%;
+  }
+}
+
+@media screen and (min-width: 1240px) {
+  .videos__col {
+    width: 32%;
+  }
+}
+
+.video {
+  position: relative;
+}
+
+/* In case the last line contains 2 videos*/
+.spacer {
+  display: none;
+}
+
+.video__duration {
+  text-decoration: none;
+  position: absolute;
+  bottom: 2%;
+  right: 0.5rem;
+  padding: 0.1rem 0.5rem 0.1rem 0.5rem;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.video__duration b {
+  color: rgb(0, 0, 0);
+}
+
+.video__content {
+  margin: 1rem 0 1rem 0;
+}
+
+.video__title {
+  margin: 1rem 0 0rem 0;
+}
+
+.video__age {
+  margin: 1rem 0 1rem 0;
+}
+
+.line {
+  margin: 60px;
 }
