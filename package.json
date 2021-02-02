@@ -4,15 +4,13 @@
   "description": "[Kynning í fyrirlestri](https://youtu.be/pCEHnurbuCU).",
   "main": "app.js",
   "scripts": {
-    "browser-sync": "browser-sync start --server --files index.html '../verkefni1' 'styles'",
     "eslint": "eslint ./src/**/*.mjs",
     "stylelint": "stylelint ./src/styles/**/*.scss --syntax scss",
     "sass-watch": "node-sass --source-map-embed --watch --recursive styles/styles.scss styles/styles.css",
-    "test": "npm-run-all eslint stylelint",
+    "test": "echo \"Error: no test specified\" && exit 1",
     "sass": "node-sass --watch ./styles/styles.scss ./styles/styles.css",
-    "start": "node index",
+    "start": "nodemon app.js",
     "dev": "concurrently npm:nodemon -w src/app.js app.js npm:sass:*",
-    "sass:build": "node-sass --source-map-embed ./styles/styles.scss ./public/styles.css",
     "sass:watch": "node-sass --source-map-embed --watch ./styles/styles.scss ./public/styles.css",
     "nodemon": "nodemon ./src/app.js"
   },
@@ -30,6 +28,7 @@
     "ejs": "^3.1.5",
     "express": "^4.17.1",
     "express-ejs-layouts": "^2.5.0",
+    "fs": "0.0.1-security",
     "node-sass": "^5.0.0",
     "sass": "^1.32.5"
   },

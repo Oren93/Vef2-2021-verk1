@@ -1,0 +1,62 @@
+<body>
+
+  <header class="header" id="header">
+    <h1 class="header__h1">Fræðslumyndbandaleigan</h1>
+  </header>
+
+  <main class="page__layout">
+
+    <h2 class="videos__title">Nýleg Myndbönd</h2>
+    <div class="videos__row">
+      <% if(data !=null) { %>
+        <% data.videos.forEach(function(videos,index){ %>
+
+          <div class="videos__col">
+            <a class="video__card" href="/video/<%- videos.id %>">
+              <div class="video">
+                <div class="video__image">
+                  <img class="video__img" src="<%- videos.poster %>" alt="<%- videos.title %>">
+                  <div class="video__duration"><b>
+                    <%-  helper.timeStamp(videos.duration) %>
+                  </b></div>
+                </div>
+              </div>
+              <div>
+                <div class="video__content">
+                  <h3 class="video__title">
+                    <%- videos.title %>
+                  </h3>
+                  <p class="video__age">
+                    <%-  helper.getTimeSince(videos.created) %>
+                  </p>
+                </div>
+              </div>
+            </a>
+          </div>
+            <% }) %>
+              <% } else { %>
+                No video found.
+                <% } %>
+
+          <div class="videos__col">
+            <div class="spacer">
+            </div>
+          </div>
+
+
+    </div>
+
+    <hr class="line">
+    <h2 class="videos__title">Kennslu Myndbönd</h2>
+    <div class="videos__row">
+
+    </div>
+
+    <hr class="line">
+    <h2 class="videos__title">Skemmtimyndbönd</h2>
+    <div class="videos__row">
+
+    </div>
+
+  </main>
+</body>
