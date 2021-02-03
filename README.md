@@ -13,6 +13,6 @@ Navigate to `localgost:3000` on your browser to see my amazing website.
 If you want to check the eslint and stylelint all you have to do is run the command `npm test` and you will see no errors in the terminal.
 
 ## note
-Most of the website interface is in Icelandic because it was given as a pattern, some of my authentic error handling appear in English. As a result the outcome is a website that uses both languages, I am aware that in real life it shouldn't be like that but I see no reason why not to have it in training. After all the coding and structure are fine. 
+The website appears in 3 languages, Latin for paternal paragraphs, English for error handling, and Icelandic for the rest. I am aware that in real life I would focus on one language, but since it is a training I didn't bother.
 
 &copy; 2021 Oren
