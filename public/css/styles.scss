@@ -1,12 +1,5 @@
-@import 'config.scss';
-@import 'video__styles.scss';
-$page: 1200px;
-$index-font: 'Franklin Gothic Medium',
-  'Arial Narrow',
-  arial,
-  sans-serif;
-$gutter: 20px;
-$white: rgb(255, 245, 223);
+@import 'config';
+@import 'video__styles';
 
 * {
   margin: 0;
@@ -23,7 +16,7 @@ $white: rgb(255, 245, 223);
 .grid {
   box-sizing: border-box;
   font-family: $index-font;
-  font-size: 16px;
+  font-size: $font-size;
   overflow-wrap: break-word;
   overflow-x: hidden;
   overflow-y: scroll;
@@ -48,19 +41,16 @@ $white: rgb(255, 245, 223);
   margin: 0 auto;
   margin-bottom: 2rem;
   max-width: 90vw;
-  width: $page;
+  width: $pc-page;
 }
 
 .videos-row {
   display: flex;
   flex-wrap: wrap;
-  //flex-direction: column;
-  //  align-items: left;
   justify-content: space-between;
 }
 
 .videos-col {
-  margin: 2rem 0;
   width: 100%;
 }
 
@@ -79,13 +69,13 @@ $white: rgb(255, 245, 223);
   width: 100%;
 }
 
-@media screen and (min-width: 801px) {
+@media screen and (min-width: $tablet-page) {
   .videos-col {
     width: 48%;
   }
 }
 
-@media screen and (min-width: 1240px) {
+@media screen and (min-width: $pc-page) {
   .videos-col {
     width: 32%;
   }
@@ -98,21 +88,21 @@ $white: rgb(255, 245, 223);
 /* In case the last line contains 2 videos */
 .spacer {
   display: none;
-  height: 0;
 }
 
 .video-duration {
-  background-color: rgba(0, 0, 0, 0.5);
-  bottom: 2%;
+  background-color: $time-background;
+  bottom: 4%;
   color: $white;
   padding: 0.1rem 0.5rem;
   position: absolute;
-  right: 0.5rem;
+  right: 1%;
   text-decoration: none;
-
-  &b {
-    color: $white !important;
+/* stylelint-disable */
+  & .stamp {
+    color: $white;
   }
+/* stylelint-enable */
 }
 
 .video-content {
@@ -124,9 +114,9 @@ $white: rgb(255, 245, 223);
 }
 
 .video-age {
-  margin: 1rem 0;
+  margin: 1rem 0 2rem;
 }
 
 .line {
-  margin: 60px;
+  margin: 50px;
 }
