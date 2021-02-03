@@ -1,37 +1,37 @@
 <body>
 
   <header class="header" id="header">
-    <h1 class="header__h1">Fræðslumyndbandaleigan</h1>
+    <h1 class="header-h1">Fræðslumyndbandaleigan</h1>
   </header>
 
-  <main class="page__layout">
+  <main class="page-layout">
 
     <% if(data !=null) { %>
       <% data.categories.forEach(function(categories,index){ %>
         <!-- if there are no videos in this category, don't show the category's title -->
         <% if(Array.isArray(categories.videos) && categories.videos.length) { %>
-          <h2 class="videos__title">
+          <h2 class="videos-title">
             <%- categories.title %>
           </h2>
-          <div class="videos__row">
+          <div class="videos-row">
             <% categories.videos.forEach(function(videos){ %>
               <% var vid=helper.filterById(data.videos,videos); %>
-                <div class="videos__col">
-                  <a class="video__card" href="/video/<%- vid.id %>">
+                <div class="videos-col">
+                  <a class="video-card" href="/video/<%- vid.id %>">
                     <div class="video">
-                      <div class="video__image">
-                        <img class="video__img" src="<%- vid.poster %>" alt="<%- vid.title %>">
-                        <div class="video__duration"><b>
+                      <div class="video-image">
+                        <img class="video-img" src="<%- vid.poster %>" alt="<%- vid.title %>">
+                        <div class="video-duration"><b>
                             <%- helper.timeStamp(vid.duration) %>
                           </b></div>
                       </div>
                     </div>
                     <div>
-                      <div class="video__content">
-                        <h3 class="video__title">
+                      <div class="video-content">
+                        <h3 class="video-title">
                           <%- vid.title %>
                         </h3>
-                        <p class="video__age">
+                        <p class="video-age">
                           <%- helper.getTimeSince(vid.created) %>
                         </p>
                       </div>
@@ -40,7 +40,7 @@
                 </div>
                 <% }) %>
 
-                      <div class="videos__col">
+                      <div class="videos-col">
                         <div class="spacer">
                         </div>
                       </div>

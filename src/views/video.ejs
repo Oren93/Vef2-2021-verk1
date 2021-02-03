@@ -1,22 +1,22 @@
 <body>
     <header class="header" id="header">
-        <h1 class="header__h1">
+        <h1 class="header-h1">
             <%- videoData==null? "Fræðslumyndbandaleigan<hr style='margin:2rem;'>" : videoData.title %>
         </h1>
     </header>
-    <main class="video__page">
+    <main class="video-page">
         <% if(videoData !=null) { %>
-            <div class="video__player">
+            <div class="video-player">
                 <video controls class="player" src=".<%- videoData.video %>" type="video/mp4">
                 </video>
             </div>
-            <div class="video__page__description">
+            <div class="video-page-description">
                 <div>
                     <p>
                         <%- videoData.description %>
                     </p>
                 </div>
-                <div class="back__link">
+                <div class="back-link">
                     <a href="/">
                         <p>Til Baka<p>
                     </a>
@@ -24,7 +24,7 @@
             </div>
             <% } else { %>
             <H2><%- title %></H2>
-            <div class="back__link">
+            <div class="back-link">
                 <a href="/">
                     <p>Til Baka<p>
                 </a>

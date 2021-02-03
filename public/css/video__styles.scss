@@ -1,62 +1,59 @@
 $video-font: 'Franklin Gothic Medium',
-'Arial Narrow',
-Arial,
-sans-serif;
+  'Arial Narrow',
+  arial,
+  sans-serif;
 $font-size: 18px;
 $page-size: 1240px;
+$blue: rgb(0, 0, 255);
 
-.video__page {
-  width: 100%;
-  max-width: $page-size;
-  margin: 0 auto;
+.video-page {
   font-family: $video-font;
   font-size: $font-size;
+  margin: 0 auto;
+  max-width: $page-size;
+  width: 100%;
 }
 
 .player {
   width: 100%;
 }
 
-.video__header__h1 {
+.video-header-h1 {
   font-size: 2.6rem;
 }
 
-.video__page__description {
+.video-page-description {
   margin-left: 2rem;
 }
 
 @media screen and (min-width: 500px) {
-  .video__page {
+  .video-page {
     width: 90%;
   }
 
-  .video__page__description {
-    margin: 2rem 0 2rem 0;
+  .video-page-description {
+    margin: 2rem 0;
   }
-}
-
-.Video__header__h1 {
-  font-size: 2rem;
 }
 
 a {
   color: inherit;
+
   /* blue colors for links too */
   text-decoration: inherit;
 
-  /* no underline */
-  & :hover {
-    color: blue;
+  &:hover {
+    color: $blue;
   }
 }
 
-.video__description {
-  margin: 2rem 0 2rem 0;
+.video-description {
+  margin: 2rem 0;
 }
 
-.back__link {
+.back-link {
   font-size: 1.3rem;
-  margin: 2rem 0 2rem 0;
+  margin: 2rem 0;
 }
 
 //sssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss

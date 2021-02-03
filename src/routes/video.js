@@ -44,8 +44,8 @@ function timeStamp(seconds) {
 
 // To get the proper object video by id
 function filterById(jsonObject, id) {
-  // eslint-disable-next-line no-shadow
-  return jsonObject.filter((jsonObject) => jsonObject.id === id)[0];
+  // eslint-disable-next-line no-shadow, eqeqeq
+  return jsonObject.filter((jsonObject) => jsonObject.id == id)[0];
 }
 
 module.exports = {

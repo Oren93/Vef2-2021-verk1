@@ -1,16 +1,16 @@
-@import "config.scss";
-@import "video__styles.scss";
+@import 'config.scss';
+@import 'video__styles.scss';
 $page: 1200px;
 $index-font: 'Franklin Gothic Medium',
-'Arial Narrow',
-Arial,
-sans-serif;
+  'Arial Narrow',
+  arial,
+  sans-serif;
 $gutter: 20px;
 $white: rgb(255, 245, 223);
 
-*{
-  padding: 0;
+* {
   margin: 0;
+  padding: 0;
   transition: 0.2s ease-in-out;
 }
 
@@ -21,42 +21,37 @@ $white: rgb(255, 245, 223);
 }
 
 .grid {
-  overflow-wrap: break-word;
-  word-wrap: break-word;
-  /* stylelint-disable-line */
   box-sizing: border-box;
-  overflow-x: hidden;
-  overflow-y: scroll; // alltaf hafa y skrollbar
-
   font-family: $index-font;
   font-size: 16px;
+  overflow-wrap: break-word;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  word-wrap: break-word;
 }
 
 .header {
+  margin: 2rem 0;
   padding: 1rem;
-  margin: 2rem 0 2rem 0;
 }
 
-
-.header__h1 {
+.header-h1 {
   text-align: center;
 }
 
-.videos__title {
+.videos-title {
   font-size: 2rem;
-  margin: 1rem 0 1rem 0;
-
+  margin: 1rem 0;
 }
 
-
-.page__layout {
+.page-layout {
   margin: 0 auto;
-  width: $page;
-  max-width: 90vw;
   margin-bottom: 2rem;
+  max-width: 90vw;
+  width: $page;
 }
 
-.videos__row {
+.videos-row {
   display: flex;
   flex-wrap: wrap;
   //flex-direction: column;
@@ -64,34 +59,34 @@ $white: rgb(255, 245, 223);
   justify-content: space-between;
 }
 
-.videos__col {
+.videos-col {
+  margin: 2rem 0;
   width: 100%;
-  margin: 2rem 0 2rem 0;
 }
 
-.video__card {
-  margin: auto;
+.video-card {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  margin: auto;
 }
 
-.video__image {
+.video-image {
   width: 100%;
 }
 
-.video__img {
+.video-img {
   width: 100%;
 }
 
 @media screen and (min-width: 801px) {
-  .videos__col {
+  .videos-col {
     width: 48%;
   }
 }
 
 @media screen and (min-width: 1240px) {
-  .videos__col {
+  .videos-col {
     width: 32%;
   }
 }
@@ -100,36 +95,36 @@ $white: rgb(255, 245, 223);
   position: relative;
 }
 
-/* In case the last line contains 2 videos*/
+/* In case the last line contains 2 videos */
 .spacer {
   display: none;
-  height: 0px;
+  height: 0;
 }
 
-.video__duration {
-  text-decoration: none;
-  color: $white;
-  position: absolute;
-  bottom: 2%;
-  right: 0.5rem;
-  padding: 0.1rem 0.5rem 0.1rem 0.5rem;
+.video-duration {
   background-color: rgba(0, 0, 0, 0.5);
-  
-  & >b {
+  bottom: 2%;
+  color: $white;
+  padding: 0.1rem 0.5rem;
+  position: absolute;
+  right: 0.5rem;
+  text-decoration: none;
+
+  &b {
     color: $white !important;
   }
 }
 
-.video__content {
-  margin: 1rem 0 1rem 0;
+.video-content {
+  margin: 1rem 0;
 }
 
-.video__title {
-  margin: 1rem 0 0rem 0;
+.video-title {
+  margin: 1rem 0 0;
 }
 
-.video__age {
-  margin: 1rem 0 1rem 0;
+.video-age {
+  margin: 1rem 0;
 }
 
 .line {

@@ -25,10 +25,12 @@ videosRouter.get("", async (req, res) => {
   } catch (err) {
     res.status(404);
     res.render("index", infoErr);
+    // eslint-disable-next-line no-console
     console.error("Error", err.message);
   }
 });
 
+/* eslint-disable  no-console */
 videosRouter.get("/video/:id", async (req, res) => {
   const videoID = req.params.id;
   try {
@@ -59,7 +61,9 @@ videosRouter.get("/video/:id", async (req, res) => {
     }
   }
 });
-// handles all kind of wrong adresses after slash at localhost:3000/foo
+/* eslint-enable  no-console */
+
+// handles all kind of wrong addresses after slash at localhost:3000/foo
 videosRouter.get("/:drasl*", async (req, res) => {
   const { drasl } = req.params;
   res.status(404);
