@@ -6,57 +6,52 @@
 
   <main class="page__layout">
 
-    <h2 class="videos__title">Nýleg Myndbönd</h2>
-    <div class="videos__row">
-      <% if(data !=null) { %>
-        <% data.videos.forEach(function(videos,index){ %>
-
-          <div class="videos__col">
-            <a class="video__card" href="/video/<%- videos.id %>">
-              <div class="video">
-                <div class="video__image">
-                  <img class="video__img" src="<%- videos.poster %>" alt="<%- videos.title %>">
-                  <div class="video__duration"><b>
-                    <%-  helper.timeStamp(videos.duration) %>
-                  </b></div>
+    <% if(data !=null) { %>
+      <% data.categories.forEach(function(categories,index){ %>
+        <!-- if there are no videos in this category, don't show the category's title -->
+        <% if(Array.isArray(categories.videos) && categories.videos.length) { %>
+          <h2 class="videos__title">
+            <%- categories.title %>
+          </h2>
+          <div class="videos__row">
+            <% categories.videos.forEach(function(videos){ %>
+              <% var vid=helper.filterById(data.videos,videos); %>
+                <div class="videos__col">
+                  <a class="video__card" href="/video/<%- vid.id %>">
+                    <div class="video">
+                      <div class="video__image">
+                        <img class="video__img" src="<%- vid.poster %>" alt="<%- vid.title %>">
+                        <div class="video__duration"><b>
+                            <%- helper.timeStamp(vid.duration) %>
+                          </b></div>
+                      </div>
+                    </div>
+                    <div>
+                      <div class="video__content">
+                        <h3 class="video__title">
+                          <%- vid.title %>
+                        </h3>
+                        <p class="video__age">
+                          <%- helper.getTimeSince(vid.created) %>
+                        </p>
+                      </div>
+                    </div>
+                  </a>
                 </div>
-              </div>
-              <div>
-                <div class="video__content">
-                  <h3 class="video__title">
-                    <%- videos.title %>
-                  </h3>
-                  <p class="video__age">
-                    <%-  helper.getTimeSince(videos.created) %>
-                  </p>
-                </div>
-              </div>
-            </a>
+                <% }) %>
+
+                      <div class="videos__col">
+                        <div class="spacer">
+                        </div>
+                      </div>
+
+
           </div>
-            <% }) %>
-              <% } else { %>
-                No video found.
-                <% } %>
-
-          <div class="videos__col">
-            <div class="spacer">
-            </div>
-          </div>
-
-
-    </div>
-
-    <hr class="line">
-    <h2 class="videos__title">Kennslu Myndbönd</h2>
-    <div class="videos__row">
-
-    </div>
-
-    <hr class="line">
-    <h2 class="videos__title">Skemmtimyndbönd</h2>
-    <div class="videos__row">
-
-    </div>
-
+          <hr class="line">
+                  <% } %>
+          <% }) %>
+            <% } else { %>
+              No video found.
+              <% } %>
   </main>
 </body>

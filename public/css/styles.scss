@@ -6,8 +6,9 @@ $index-font: 'Franklin Gothic Medium',
 Arial,
 sans-serif;
 $gutter: 20px;
+$white: rgb(255, 245, 223);
 
-* {
+*{
   padding: 0;
   margin: 0;
   transition: 0.2s ease-in-out;
@@ -107,15 +108,16 @@ $gutter: 20px;
 
 .video__duration {
   text-decoration: none;
+  color: $white;
   position: absolute;
   bottom: 2%;
   right: 0.5rem;
   padding: 0.1rem 0.5rem 0.1rem 0.5rem;
   background-color: rgba(0, 0, 0, 0.5);
-}
-
-.video__duration b {
-  color: rgb(0, 0, 0);
+  
+  & >b {
+    color: $white !important;
+  }
 }
 
 .video__content {

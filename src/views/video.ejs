@@ -1,20 +1,34 @@
 <body>
     <header class="header" id="header">
-      <h1 class="header__h1"><%- videoData.title %></h1>
+        <h1 class="header__h1">
+            <%- videoData==null? "Fræðslumyndbandaleigan<hr style='margin:2rem;'>" : videoData.title %>
+        </h1>
     </header>
-    <main class="page__layout">
-        <div class="video__player">
-            <video controls class="player" src="<%- videoData.video %>" type="video/mp4">
-            </video>
-        </div>
-        <div class="video__description">
-            <p><%- videoData.description %></p>
-        </div>
-        <h2>Tengd myndbönd</h2>
-        <div class="back__link">
-            <a href="/">
-                <p>Til Baka<p>
-            </a>
-        </div>
+    <main class="video__page">
+        <% if(videoData !=null) { %>
+            <div class="video__player">
+                <video controls class="player" src=".<%- videoData.video %>" type="video/mp4">
+                </video>
+            </div>
+            <div class="video__page__description">
+                <div>
+                    <p>
+                        <%- videoData.description %>
+                    </p>
+                </div>
+                <div class="back__link">
+                    <a href="/">
+                        <p>Til Baka<p>
+                    </a>
+                </div>
+            </div>
+            <% } else { %>
+            <H2>Video not found</H2>
+            <div class="back__link">
+                <a href="/">
+                    <p>Til Baka<p>
+                </a>
+            </div>
+            <% } %>
     </main>
 </body>
